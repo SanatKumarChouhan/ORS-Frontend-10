@@ -36,7 +36,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { MyprofileComponent } from './user/myprofile.component';
 import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product/product-list.component';
-import { AuthGuardService } from './auth-guard.service';
+// import { AuthGuardService } from './auth-guard.service';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeelistComponent } from './employee/employeelist.component';
 
