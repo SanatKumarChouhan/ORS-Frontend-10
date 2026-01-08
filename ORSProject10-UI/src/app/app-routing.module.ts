@@ -36,8 +36,9 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { MyprofileComponent } from './user/myprofile.component';
 import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product/product-list.component';
-import { CustomerComponent } from './customer/customer.component';
-import { CustomerlistComponent } from './customer/customer-list.component';
+import { AuthGuardService } from './auth-guard.service';
+import { EmployeeComponent } from './employee/employee.component';
+import { EmployeelistComponent } from './employee/employeelist.component';
 
 
 
@@ -46,32 +47,13 @@ const routes: Routes = [
         path: '',
         redirectTo: 'dashboard',
         pathMatch: 'full'
+        
     },
     {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        // canActivate: [AuthGuardService]
     },
-
-
-    // ***********CUSTOMER*************
-
-    {
-        path: 'customer',
-        component: CustomerComponent
-
-    },
-    {
-        path: 'customerlist',
-        component: CustomerlistComponent
-
-    },
-    {
-        path: 'customet/:id',
-        component: CustomerComponent
-
-    },
-
-
    
 
     // ***********PRODUCT*************
@@ -201,7 +183,8 @@ const routes: Routes = [
     },
     {
         path: 'userlist',
-        component: UserListComponent
+        component: UserListComponent,
+        // canActivate: [AuthGuardService]
 
     },
     {
@@ -295,6 +278,21 @@ const routes: Routes = [
 
 
     },
+    {
+        path: 'employee',
+        component: EmployeeComponent
+
+    },
+    {
+        path: 'employeelist',
+        component: EmployeelistComponent
+
+    },
+    {
+        path: 'employee/:id',
+        component: EmployeeComponent
+
+    }
     
 
 
