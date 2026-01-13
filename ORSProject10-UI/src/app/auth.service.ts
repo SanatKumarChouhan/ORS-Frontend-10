@@ -2,15 +2,25 @@ import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HttpServiceService } from './http-service.service';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { Router } from '@angular/router';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService implements HttpInterceptor {
 
-  constructor(private http: HttpServiceService) { }
+  constructor(private http: HttpServiceService, private router: Router) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
+
+     // 🔥 LOGIN API ko SKIP karo
+  if (req.url.includes('/Auth/login')) {
+    return next.handle(req);
+  }
 
     if (localStorage.getItem('fname') && localStorage.getItem('token')) {
       req = req.clone({
@@ -20,10 +30,24 @@ export class AuthService implements HttpInterceptor {
 
           Authorization: this.http.getToken()
         }
-      })
+      });
     }
-    console.log(req.headers.get("Authorization") + "------------------->>>")
-    return next.handle(req);
+    // console.log(req.headers.get("Authorization") + "------------------->>>")
+    // return next.handle(req);
+
+    
+    return next.handle(req).pipe(
+      catchError(err => {
+        if (err.status === 401 || err.status === 403) {
+          localStorage.clear();
+          // window.location.href = '/login/true';
+          this.router.navigateByUrl('/login/truee');
+          // window.location.href = '/login?reason=expired';
+
+        }
+        return throwError(err);
+      })
+    );
 
   }
 

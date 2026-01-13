@@ -39,6 +39,8 @@ import { ProductListComponent } from './product/product-list.component';
 import { AuthGuardService } from './auth-guard.service';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeelistComponent } from './employee/employeelist.component';
+import { OrderComponent } from './order/order.component';
+import { OrderlistComponent } from './order/orderlist.component';
 
 
 
@@ -291,6 +293,23 @@ const routes: Routes = [
     {
         path: 'employee/:id',
         component: EmployeeComponent
+
+    },
+     // ***********ORDER*************
+
+    {
+        path: 'order',
+        component: OrderComponent
+
+    },
+    {
+        path: 'orderlist',
+        component: OrderlistComponent
+
+    },
+    {
+        path: 'order/:id',
+        component: OrderComponent
 
     }
     

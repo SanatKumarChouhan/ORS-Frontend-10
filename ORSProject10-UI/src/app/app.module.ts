@@ -56,6 +56,10 @@ import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product/product-list.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeelistComponent } from './employee/employeelist.component';
+import { OrganizationMemberComponent } from './organization-member/organization-member.component';
+import { OrganizationMemberListComponent } from './organization-member/organization-member-list.component';
+import { OrderComponent } from './order/order.component';
+import { OrderlistComponent } from './order/orderlist.component';
 
 
 
@@ -112,7 +116,13 @@ export function myHttpLoader(http: HttpClient) {
     ProductComponent,
     ProductListComponent,
     EmployeeComponent,
-    EmployeelistComponent
+    EmployeelistComponent,
+    OrganizationMemberComponent,
+    OrganizationMemberListComponent,
+    OrderComponent,
+    OrderlistComponent
+
+  
  
 
     
