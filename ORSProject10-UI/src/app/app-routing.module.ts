@@ -34,13 +34,6 @@ import { ChangepasswordComponent } from "./user/changepassword.component";
 import { LoaderComponent } from './loader/loader.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { MyprofileComponent } from './user/myprofile.component';
-import { ProductComponent } from './product/product.component';
-import { ProductListComponent } from './product/product-list.component';
-import { AuthGuardService } from './auth-guard.service';
-import { EmployeeComponent } from './employee/employee.component';
-import { EmployeelistComponent } from './employee/employeelist.component';
-import { OrderComponent } from './order/order.component';
-import { OrderlistComponent } from './order/orderlist.component';
 
 
 
@@ -56,25 +49,7 @@ const routes: Routes = [
         component: DashboardComponent,
         // canActivate: [AuthGuardService]
     },
-   
 
-    // ***********PRODUCT*************
-
-    {
-        path: 'product',
-        component: ProductComponent
-
-    },
-    {
-        path: 'productlist',
-        component: ProductListComponent
-
-    },
-    {
-        path: 'product/:id',
-        component: ProductComponent
-
-    },
 
     // ======================================
     {
@@ -278,38 +253,6 @@ const routes: Routes = [
         path: 'changepassword',
         component: ChangepasswordComponent
 
-
-    },
-    {
-        path: 'employee',
-        component: EmployeeComponent
-
-    },
-    {
-        path: 'employeelist',
-        component: EmployeelistComponent
-
-    },
-    {
-        path: 'employee/:id',
-        component: EmployeeComponent
-
-    },
-     // ***********ORDER*************
-
-    {
-        path: 'order',
-        component: OrderComponent
-
-    },
-    {
-        path: 'orderlist',
-        component: OrderlistComponent
-
-    },
-    {
-        path: 'order/:id',
-        component: OrderComponent
 
     }
     

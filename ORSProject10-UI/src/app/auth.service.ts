@@ -17,7 +17,7 @@ export class AuthService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
 
-     // 🔥 LOGIN API ko SKIP karo
+     // 🔥 LOGIN API SKIP
   if (req.url.includes('/Auth/login')) {
     return next.handle(req);
   }
@@ -32,17 +32,14 @@ export class AuthService implements HttpInterceptor {
         }
       });
     }
-    // console.log(req.headers.get("Authorization") + "------------------->>>")
-    // return next.handle(req);
 
     
     return next.handle(req).pipe(
       catchError(err => {
         if (err.status === 401 || err.status === 403) {
           localStorage.clear();
-          // window.location.href = '/login/true';
+         
           this.router.navigateByUrl('/login/truee');
-          // window.location.href = '/login?reason=expired';
 
         }
         return throwError(err);

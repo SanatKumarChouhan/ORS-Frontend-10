@@ -52,14 +52,6 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthService } from './auth.service';
 import { MyprofileComponent } from './user/myprofile.component';
-import { ProductComponent } from './product/product.component';
-import { ProductListComponent } from './product/product-list.component';
-import { EmployeeComponent } from './employee/employee.component';
-import { EmployeelistComponent } from './employee/employeelist.component';
-import { OrganizationMemberComponent } from './organization-member/organization-member.component';
-import { OrganizationMemberListComponent } from './organization-member/organization-member-list.component';
-import { OrderComponent } from './order/order.component';
-import { OrderlistComponent } from './order/orderlist.component';
 
 
 
@@ -112,15 +104,7 @@ export function myHttpLoader(http: HttpClient) {
     NavbarComponent,
     SpinnerComponent,
     FooterComponent,
-    MyprofileComponent,
-    ProductComponent,
-    ProductListComponent,
-    EmployeeComponent,
-    EmployeelistComponent,
-    OrganizationMemberComponent,
-    OrganizationMemberListComponent,
-    OrderComponent,
-    OrderlistComponent
+    MyprofileComponent
 
   
  
