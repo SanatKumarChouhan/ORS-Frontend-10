@@ -71,60 +71,60 @@ export class HttpServiceService {
     });
   }
 
-  post(endpoint, bean, callback) {
-    // if (this.isLogout()) {
-    //   console.log('inside isLogout return true')
-    //   return true;
-    // }
-    return this.httpClient.post(endpoint, bean).subscribe((data) => {
-      console.log(data);
-      callback(data);
-
-    }, error => {
-
-      console.log('ORS Error--', error);
-    });
-  }
-
-  // post(endpoint, bean, callback, errorCallback?) {
-
+  // post(endpoint, bean, callback) {
   //   // if (this.isLogout()) {
-  //   //   console.log('inside isLogout return true');
-  //   //   return;
+  //   //   console.log('inside isLogout return true')
+  //   //   return true;
   //   // }
-
   //   return this.httpClient.post(endpoint, bean).subscribe((data) => {
+  //     console.log(data);
+  //     callback(data);
 
-  //       console.log(data);
-  //       callback(data);
-        
-  //     }, (error) => {
-  //       console.log('ORS Error--', error);
+  //   }, error => {
 
-  //       let msg = 'Service is currently unavailable';
-
-  //       if (error && error.error && error.error.result && error.error.result.message) {
-  //         msg = error.error.result.message;
-
-  //         console.log('@#@#@#@#@#@#@# >>>>>> ' + msg)
-  //       }
-
-  //       const errorRes = {
-  //         success: false,
-  //         result: {
-  //           message: msg
-  //         }
-  //       };
-
-  //       callback(errorRes);
-
-  //       if (errorCallback) {
-  //         errorCallback(error);
-  //       }
-  //     }
-
-  //   );
+  //     console.log('ORS Error--', error);
+  //   });
   // }
+
+  post(endpoint, bean, callback, errorCallback?) {
+
+    // if (this.isLogout()) {
+    //   console.log('inside isLogout return true');
+    //   return;
+    // }
+
+    return this.httpClient.post(endpoint, bean).subscribe((data) => {
+
+        console.log(data);
+        callback(data);
+        
+      }, (error) => {
+        console.log('ORS Error--', error);
+
+        let msg = 'Service is currently unavailable';
+
+        if (error && error.error && error.error.result && error.error.result.message) {
+          msg = error.error.result.message;
+
+          console.log('@#@#@#@#@#@#@# >>>>>> ' + msg)
+        }
+
+        const errorRes = {
+          success: false,
+          result: {
+            message: msg
+          }
+        };
+
+        callback(errorRes);
+
+        if (errorCallback) {
+          errorCallback(error);
+        }
+      }
+
+    );
+  }
 
 
 }
