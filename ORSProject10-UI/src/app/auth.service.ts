@@ -17,7 +17,7 @@ export class AuthService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
 
-     // 🔥 LOGIN API SKIP
+
   if (req.url.includes('/Auth/login')) {
     return next.handle(req);
   }

@@ -34,6 +34,8 @@ import { ChangepasswordComponent } from "./user/changepassword.component";
 import { LoaderComponent } from './loader/loader.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { MyprofileComponent } from './user/myprofile.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { EmployeelistComponent } from './employee/employeelist.component';
 
 
 
@@ -252,7 +254,20 @@ const routes: Routes = [
     {
         path: 'changepassword',
         component: ChangepasswordComponent
+    },
+    {
+        path: 'employee',
+        component: EmployeeComponent
 
+    },
+    {
+        path: 'employee/:id',
+        component: EmployeeComponent
+
+    },
+    {
+        path: 'employeelist',
+        component: EmployeelistComponent
 
     }
     

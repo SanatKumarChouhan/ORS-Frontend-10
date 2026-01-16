@@ -52,6 +52,8 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthService } from './auth.service';
 import { MyprofileComponent } from './user/myprofile.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { EmployeelistComponent } from './employee/employeelist.component';
 
 
 
@@ -104,7 +106,9 @@ export function myHttpLoader(http: HttpClient) {
     NavbarComponent,
     SpinnerComponent,
     FooterComponent,
-    MyprofileComponent
+    MyprofileComponent,
+    EmployeeComponent,
+    EmployeelistComponent
 
   
  

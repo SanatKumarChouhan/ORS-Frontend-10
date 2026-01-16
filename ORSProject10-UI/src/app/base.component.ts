@@ -224,7 +224,9 @@ export class BaseCtl implements OnInit {
        console.log('dataa ===== > ', res.result.data);
 
       if (res.success) {
+
         _self.form.message = "Data is saved";
+        
         
         if (_self.form.data.id && _self.form.data.id > 0) {
           _self.form.data.id = res.result.data;
